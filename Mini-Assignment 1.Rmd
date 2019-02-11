@@ -1,0 +1,27 @@
+---
+title: "Mini-Assignment 1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggrepel)
+```
+
+```{r}
+data()
+
+str(airquality)
+head(airquality)
+
+?airquality
+```
+
+```{r}
+ggplot(airquality, aes(x=Day, y=Ozone, color=Temp)) +
+  geom_point() +
+  facet_wrap(~Month, ncol=5) +
+  scale_color_continuous(low = "blue", high = "red")
+```
+
